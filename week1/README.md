@@ -1,5 +1,9 @@
 # Day 1 | Unix Command Line
 
+## **Pengertian Shell**
+
+Shell merupakan program khusus yang digunakan untuk komunikasi langsung antara pengguna dengan sebuah sistem operasi.
+
 ## **Pengertian CLI**
 
 Interface pada sebuah sistem operasi terbagi dua, yaitu **GUI (Graphical user interface)** dan juga **CLI (Command Line Interface)**.  
@@ -7,7 +11,7 @@ Interface pada sebuah sistem operasi terbagi dua, yaitu **GUI (Graphical user in
 
 ## **Contoh CLI**
 
-Beberapa contoh CLI adalah :
+Beberapa contoh CLI adalah yang bisa kita gunakan :
 
 - sh
 - bash
@@ -66,7 +70,7 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
   head readme.txt
   ```
 
-  !(Head command!)[/head.png]
+  ![Head command!](head.png)
 
 - tail  
   tail merupakan perintah yang digunakan untuk melihat beberapa line akhir dari sebuah file text.
@@ -75,7 +79,7 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
   tail readme.txt
   ```
 
-  ![Tail command!](/tail.png)
+  ![Tail command!](tail.png)
 
 - cat  
   cat merupakan perintah yang digunakan untuk melihat isi semua file text.
@@ -89,7 +93,7 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
   cp readme.txt nama_direktori/nama_file_salinan
   ```
 
-  ![cp command!](/cp.png)  
+  ![cp command!](cp.png)  
   pada kasus diatas merupakan cara mengcopy file readme.txt ke dalam direktori "salinan"
 
 - mv  
@@ -99,7 +103,7 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
   mv readme-salin.txt nama_direktori/salinan-readme.txt
   ```
 
-  ![mv command!](/mv.png)  
+  ![mv command!](mv.png)  
   kasus diatas merupakan cara memindahkan file readme-salin.txt | tanda ".." memilikir arti keluar satu langkah dari direktori saat ini.
 
 - rm  
@@ -124,3 +128,8 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
     ```
 
 # Day 2 | Git and Github
+
+## **Pengertian Git**
+
+Git merupakan sebuah tool untuk programmer, tool ini sendiri digunakan sebagai Version Control System.  
+Tugas dari Version Control System adalah untuk mencatat setiap perubahan pada file pada suatu project yang dikerjakan.
