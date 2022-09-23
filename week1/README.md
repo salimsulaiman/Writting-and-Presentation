@@ -1,4 +1,4 @@
-# CLI
+# Unix Command Line
 
 ## **Pengertian CLI**
 
@@ -22,21 +22,21 @@ Sebuah filesystem memiliki tujuan untuk mengatur bagaimana sebuah data disimpan 
 
 Berikut ini adalah beberapa command yang dapat digunakan untuk navigasi
 
-- pwd  
+- **pwd**  
   pwd merupakan sebuah perintah yang digunakan untuk melihat direktori kita berada sekarang
 
   ```
   pwd
   ```
 
-- ls  
+- **ls**  
   ls merupakan sebuah perintah yang digunakan untuk melihat isi file yang ada pada sebuah direktori.
 
   ```
   ls
   ```
 
-- cd  
+- **cd**  
   cd merupakan sebuah perintah yang digunakan untuk berpindah direktori, cara penggunaannya adalah.
 
   ```
@@ -45,7 +45,7 @@ Berikut ini adalah beberapa command yang dapat digunakan untuk navigasi
 
 Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulasi file dan juga direktori
 
-- touch  
+- **touch**  
   touch merupakan perintah yang digunakan untuk membuat file baru.
 
   ```
@@ -94,7 +94,31 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
 
 - mv  
   mv merupakan perintah yang digunakan untuk memindahkan file, selain itu perintah mv dapat digunakan untuk rename sebuah file
+
   ```
-  mv readme-salin.txt ../salinan-readme.txt
+  mv readme-salin.txt nama_direktori/salinan-readme.txt
   ```
-  ![cp command!](/cp.png)
+
+  ![mv command!](/mv.png)  
+  kasus diatas merupakan cara memindahkan file readme-salin.txt | tanda ".." memilikir arti keluar satu langkah dari direktori saat ini.
+
+- rm  
+  rm merupakan perintah yang digunakan untuk menghapus file
+
+  ```
+  rm nama_file
+  ```
+
+  selain itu rm juga dapat digunakan untuk menghapus direktori
+
+  - untuk mengapus direktori yang kosong
+
+    ```
+    rm -d nama_direktori
+    ```
+
+  - untuk mengapus direktori yang didalamnya terdapat file
+
+    ```
+    rm -r nama_direktori
+    ```
