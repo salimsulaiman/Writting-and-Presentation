@@ -1,4 +1,4 @@
-# Unix Command Line
+# Day 1 | Unix Command Line
 
 ## **Pengertian CLI**
 
@@ -66,7 +66,7 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
   head readme.txt
   ```
 
-  ![Head command!](/head.png)
+  !(Head command!)[/head.png]
 
 - tail  
   tail merupakan perintah yang digunakan untuk melihat beberapa line akhir dari sebuah file text.
@@ -122,3 +122,5 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
     ```
     rm -r nama_direktori
     ```
+
+# Day 2 | Git and Github
