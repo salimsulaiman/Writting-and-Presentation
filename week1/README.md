@@ -1,4 +1,4 @@
-# Day 1 | Unix Command Line
+# Day 1 | Unix Command Line & Git
 
 ## **Pengertian Shell**
 
@@ -126,8 +126,6 @@ Selain command untuk navigasi, ada juga command yang digunakan untuk memanipulas
     ```
     rm -r nama_direktori
     ```
-
-# Day 2 | Git and Github
 
 ## **Pengertian Git**
 
