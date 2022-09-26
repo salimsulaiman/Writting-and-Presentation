@@ -244,4 +244,102 @@ Setelah mengcopy link tersebut, selanjutnya adalah masuk ke dalam direktori loca
 git clone https://github.com/salimsulaiman/Tshirt.git
 ```
 
-Maka secara otomatis git akan melakukan clone dari github ke direktori local kalian
+Maka secara otomatis git akan melakukan clone dari github ke direktori local kalian.
+
+# Day 3 | HTML
+
+## **Peran HTML**
+
+Apa itu HTML?, HTML merupakan singkatan dari Hypertext Markup Language. HTML ini digunakan untuk menampilkan konten pada browser kalian.  
+HTML bukanlah sebuah bahasa pemrograman, dengan begitu artinya HTML tidak bisa dinamis mengolah data.
+
+## Tools Pendukung dalam Menggunakan HTML
+
+Sebagai programmer kita membutuhkan sekali yang namanya tools, tools ini digunakan untuk mempermudah dan menambah produktifitas kita sebagai programmer.  
+Terdapat 2 tools utama untuk pendukung dalam pembuatan HTML
+
+- Browser (Chrome, Edge, etc)
+- Text Editor (VS Code, Subleme, Notepad++, etc)
+
+## Membuat HTML sederhana
+
+Pada umumnya HTML memiliki sebuah struktur seperti dibawah ini.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hello, World!!
+  </body>
+</html>
+```
+
+## **Menjalankan HTML**
+
+Terdapat beberapa cara untuk menjalankan file html
+
+- Secara Manual  
+  Untuk menjalankan file html secara manual kita dapat langsung double click pada file html yang telah kita buat, secara otomatis file html kita akan terbuka pada browser.
+- Menggunakan live server pada vs code
+  Yang pertama harus dilakukan adalah mendownload ekstensi live server pada vs code, setelah mendownload kalian hanya perlu klik kanan pada workspace file html kemudian klik Open with live server
+
+![live-server!](liveserver.png)  
+**Note** : Keuntungan dari menggunakan live server ini adalah kita dapat real time mengubah file html tanpa harus melakukan refresh pada browser secara terus menerus.
+
+## **HTML Element**
+
+HTML Element memiliki opening tag dan juga clossing tag.  
+Contoh opening tag : `<p>`  
+Contoh closing tag : `</p>`
+
+Tetapi ada juga element html yang memiliki single tag.  
+Contoh : `<br>` , `<hr>`, `img`
+
+## **Semantic HTML**
+
+Semantic HTML artinya kita menggunakan element HTML yang sesuai dengan kebutuhan konten, contonya seperti article, header, footer, etc.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Salim Blog</h1>
+    </header>
+    <nav>
+      <li><a href="">Home</a></li>
+      <li><a href="">About Us</a></li>
+      <li><a href="">Contact Us</a></li>
+    </nav>
+
+    <article>
+      <h3>This is my blog</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quas.
+      </p>
+    </article>
+    <footer>&copy; Salim Sulaiman | 2022</footer>
+  </body>
+</html>
+```
+
+## **Melakukan deploy**
+
+Deploy merupakan sebuah proses untuk menyebarkan aplikasi yang kita kerjakan agar bisa digunakan oleh orang lain.  
+Untuk mendeploy HTML kita dapat menggunakan tools bernama Netlify.
+
+- Register dan Login menggunakan email ataupun github.
+- Masuk ke tab sites.
+- drag & drop seluruh folder HTMl.
