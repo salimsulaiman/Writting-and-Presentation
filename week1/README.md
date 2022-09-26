@@ -244,7 +244,7 @@ git clone https://github.com/salimsulaiman/Tshirt.git
 
 Maka secara otomatis git akan melakukan clone dari github ke direktori local kalian.
 
-# Day 3 | HTML
+# Day 2 | HTML
 
 ## **Peran HTML**
 
@@ -341,3 +341,249 @@ Untuk mendeploy HTML kita dapat menggunakan tools bernama Netlify.
 - Register dan Login menggunakan email ataupun github.
 - Masuk ke tab sites.
 - drag & drop seluruh folder HTMl.
+
+# Day 3 | CSS
+
+## **Peran CSS**
+
+CSS merupakan bahasa yang digunakan untuk mendesain sebuah halaman website.  
+Dengan menggunakan CSS, kita dapat mengubah warna, mengubah font, mengatur tata letak, dll.
+
+## **Struktur CSS**
+
+```css
+selector {
+  property: value;
+}
+```
+
+## **Cara menyisipkan CSS**
+
+Terdapat 3 cara untuk menyisipkan CSS ke dalam HTML
+
+- **Inline**  
+  Cara menyisipkan CSS ini adalah dengan menggunakan attribut style di dalam HTML element.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="color: #999">Hello World</h1>
+  </body>
+</html>
+```
+
+- **Internal**  
+   Cara menyisipkan CSS ini adalah dengan menggunakan element `<style>` yang diletakan di dalam element `<head>`
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+        h1 {
+          color: #999;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Hello World</h1>
+    </body>
+  </html>
+  ```
+
+- **External**  
+   Cara menyisipkan CSS ini adalah dengan cara membuat file CSS terpisah, lalu menyambungkannya dengan file html menggunakan element `<link>`. element tersebut diletakan di dalam element `<head>`
+
+  Style.css
+
+  ```css
+  h1 {
+    color: #999;
+  }
+  ```
+
+  Index.html
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+      <h1>Hello World</h1>
+    </body>
+  </html>
+  ```
+
+## **Sintaks dasar CSS**
+
+CSS memiliki sebuah sintaks dasar, yaitu terdapat selector, property, dan juga value.  
+ Sebagai contoh saat ingin merubah warna text kita dapat menggunakan sintaks berikut.
+
+```css
+h1 {
+  color: #999;
+}
+```
+
+h1 sebagai selector element mana yang ingin diatur dengan CSS.  
+color sebagai property yang ingin diatur.  
+#999 sebagai value.
+
+## **Menerapkan Styling pada Sebuah Halaman HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 50px 0;
+      }
+      * {
+        font-family: "Poppins";
+      }
+      .text-center {
+        text-align: center;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h3 {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+      alt="user"
+      width="100px"
+    />
+    <h1 class="text-center">Salim Sulaiman</h1>
+    <h3 class="text-center">Halo, perkenalkan nama saya Salim Sulaiman</h3>
+    <h4 class="text-center">Saya dari Tegal</h4>
+
+    <footer class="text-center">Copy &copy; Salim Sulaiman | 2022</footer>
+  </body>
+</html>
+```
+
+## **Display Flex**
+
+Terdapat banyak cara untuk mengatur layout pada halaman html, salah satunya adalah FlexBox.  
+Metode Flexbox menggunakan sebuah property display bernama Flex.
+
+```css
+.container {
+  display: flex;
+}
+```
+
+kita dapat menerapkan flexbox ini pada halaman html sehingga dapat mempermudah pengaturan tata letak konten di dalamnya.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="">Salim Blog</a>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="home-text">
+        <h1 class="text-center">Salim Sulaiman</h1>
+        Programmer | Designer | Gamer
+      </div>
+      <div class="home-img">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          alt=""
+          width="200px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  font-family: "Poppins";
+  margin: 0;
+}
+.text-center {
+  text-align: center;
+}
+h3 {
+  color: #666;
+}
+nav {
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 100px;
+  background-color: #e94560;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin: 0 10px;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.container {
+  display: flex;
+  padding: 100px 0;
+  align-items: center;
+  justify-content: center;
+}
+.home-text {
+  margin: 0 100px;
+}
+.home-img {
+  margin: 0 100px;
+}
+```
