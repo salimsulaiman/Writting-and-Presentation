@@ -226,7 +226,7 @@ git remote add origin https://github.com/salimsulaiman/Writting-Presentation.git
 Dan untuk langkah terakhir adalah melakukan push
 
 ```
-git push -u origi main
+git push -u origin main
 ```
 
 ## **Melakukan clone ke direktori local**
@@ -610,7 +610,7 @@ Algoritma menambahkan kedua angka
 
 Step 1 : Deklarasikan variabel num1, num2, dan sum.  
 Steo 2 : Menuliskan value dari variabel num1 dan num2.  
-Step 3 : Tambahkan num1 dan num2 dan hasilnya disimpan ke dalam variabel sum.
+Step 3 : Tambahkan num1 dan num2 dan hasilnya disimpan ke dalam variabel sum.  
 Step 4 : Display sum.
 
 ## **Contoh Penerapan Algoritma**
@@ -876,7 +876,7 @@ Looping adalah statement yang mengulang sebuah instruksi hingga kondisi terpenuh
 
 ### **For Loop**
 
-Gunakan for loop jika kita tahu seberapa banyak nilai pasti untung pengulangannya.
+Gunakan for loop jika kita tahu seberapa banyak nilai pasti untuk pengulangannya.
 
 ```js
 for (let angka = 1; angka <= 10; angka++) {
