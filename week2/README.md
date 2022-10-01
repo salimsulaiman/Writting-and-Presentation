@@ -1,3 +1,140 @@
+# Day 2 | Scope & Function
+
+## **Scope**
+
+Scope adalah konsep dalam flow data variabel. Untuk menentukan suatu variabel bisa diakses pada scope tertentu atau tidak.
+
+### **Blocks**
+
+Blocks adalah code yang berada didalam curly braces {}, conditional, function, dan looping menggunakan blocks.
+
+### **Global Scope**
+
+Global Scope berarti variabel yang kita buat dapat diakses dimanapun dalam satu file, untuk menjadi Global Scope, suatu variabel harus dideklarasikan diluar Blocks
+
+```js
+let nama = "Salim";
+
+function greeting() {
+  return nama; // output salim
+}
+
+console.log(nama); // output saim
+```
+
+### **Local Scope**
+
+Local Scope berarti kita mendeklarasikan variabel di dalam blocks. Variabel tersebut hanya bisa diakses didalam blocks saja, tidak bisa diakses diluar blocks
+
+```js
+function greeting() {
+  let nama = "Salim";
+  return nama; // Salim
+}
+
+console.logA(greeting()); // output Salim
+console.log(nama); // Uncaught ReferenceError: name is not defined because local scope
+```
+
+## **Function**
+
+Function adalah sebuah blok kode dalam sebuah grup untuk menyelesaikan 1 task/1 fitur. Ketika kita membutuhkan fitur tersebut nantinya, kita bisa kembali menggunakannya.
+
+### **Membuat Function**
+
+```js
+function greetWorld() {
+  return "Hello World";
+}
+```
+
+### **Memanggil Function**
+
+Untuk memanggil function kalian dapat menggunakan cara berikut
+
+```js
+greetWorld(); // untuk memanggil function name
+console.log(greetWorld()); // memanggil dan menampilkann function ke console
+```
+
+### **Parameter & Argument**
+
+- **Parameter**
+
+  Dengan parameter, function dapat menerima sebuah inputan data dan menggunakannya untuk melakukan task/tugas.  
+  Untuk membuat function, kita harus mengetahui data-data yang dibutuhkan. Misal saat membuat function penambahan 2 buah nilai, data yang dibutuhkan adalah 2 nilai tersebut
+
+  ```js
+  function penambahan(nilai1, nilai2) {
+    return nilai1 + nilai2;
+  }
+  ```
+
+  nilai1, nilai2 merupakan parameter dari sebuah fungsi penambahan
+
+- **Argument**
+
+  Argument adalah nilai yang digunakan saat memanggil function.  
+  Jumlah Argument harus sama dengan jumlah parameternya.
+
+  ```js
+  console.log(penambahan(2, 3)); // Output 5
+  ```
+
+  nilai 2 dan 3 pada code diatas disebut argument
+
+- **Default Parameter**
+
+  Default parameter digunakan untuk memberikan nilai awal/default pada parameter function.  
+  Default paramater bisa digunakan jika kita ingin menjaga function agar tidak error saat dipanggil tanpa argument.
+
+  ```js
+  function greeting(name = "Salim") {
+    return "Hello" + name;
+  }
+
+  console.log(greeting(Sulaiman)); // Output : Sulaiman
+  console.log(greeting()); // Output : Salim
+  ```
+
+### **Funtion Helper**
+
+Kita bisa menggunakan function yang sudah dibuat pada function lain
+
+```js
+function multiplyByNineFifths(number) {
+  return number * (9 / 5);
+}
+
+function getFahrenheit(celcius) {
+  return multiplyByNineFifths(celcius) + 32;
+}
+
+console.log(15); // Return 59
+```
+
+### **Arrow Funtion**
+
+Arrow funtion merupakan cara penulisan function yang lebih mudah dan singkat, ini merupakan fitur terbaru yang ada pada ES6
+
+```js
+const greeting = () => {
+  return "Hello World";
+};
+
+console.log(greeting()); //output Hello World
+```
+
+Cara penulisan parameter dengan arrow function
+
+```js
+const fullName = (firstName, lastName) => {
+  return "Hello " + firstName + " " + lastName;
+};
+
+console.log(fullName(Salim, Sulaiman)); //output Salim Sulaiman
+```
+
 # Day 3 | DOM (Mengakses Halaman HTML)
 
 ## **Apa itu DOM?**
