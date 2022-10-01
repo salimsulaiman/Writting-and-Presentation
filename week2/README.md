@@ -130,7 +130,7 @@ Terdapat berbagai cara untuk mengakses sebuah Element HTML.
   console.log(itemQuery.nextElementSibling);
   ```
 
-# Day 4 | DOM (Mmenipulasi Element HTML)
+# Day 4 | DOM (Memanipulasi Element HTML)
 
 Dengan menggunakan DOM kita dapat memanipulasi element HTML
 
@@ -233,4 +233,188 @@ let tess = document.getElementById("tess");
 let tessStyle = getComputedStyle(tess);
 console.log(tessStyle.height);
 console.log(tessStyle.backgroundColor);
+```
+
+# Day 5 | DOM (Event)
+
+## **Peran DOM Event**
+
+User experience bersifat dua arah, selain menampilkan element HTML, website juga harus bisa menangkap interaksi user.  
+Event sendiri merupakan kejadian/kegiatan/interaksi yang terjadi pada sebuah website.
+
+Terdapat beberapa event pada DOM
+
+- click
+- submit
+- focuss
+- blur
+- hover
+- change
+- scroll
+
+## **Memberikan Event**
+
+Terdapat 3 Cara dalam menggunakan Event
+
+- ### **HTML Attribute**
+
+  Contoh sederhana penggunaan Event menggunakan HTML Attribute
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+
+      <script src="login.js" defer></script>
+    </head>
+    <body>
+      <div class="container">
+        <h1 onclick="alert('Selamat Datang')">Hallo</h1>
+      </div>
+    </body>
+  </html>
+  ```
+
+- ### **Event Property**
+
+  Cara penggunaannya adalah berdasarkan atrribute dari element HTML, seperti ID dan Class
+
+  index.html
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+
+      <script src="login.js" defer></script>
+    </head>
+    <body>
+      <div class="container">
+        <p id="paragraf">click me</p>
+      </div>
+    </body>
+  </html>
+  ```
+
+  login.js
+
+  ```js
+  let paragraf = document.getElementById("paragraf");
+  paragraf.onClick = function () {
+    alert("ini adalah paragraf");
+  };
+  ```
+
+- ### **addEventListener()**
+
+  Kita dapat membuat event dengan menggunakan addEventListener().
+
+  index.html
+
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+    </head>
+    <body>
+      <button id="btn">Klik saya</button>
+      <script src="script.js"></script>
+    </body>
+  </html>
+  ```
+
+  script.js
+
+  ```js
+  let button = document.getElementById("btn");
+  button.addEventListener("click", function (event) {
+    console.log(event.target);
+    alert("ini dari button");
+  });
+  ```
+
+## **Contoh penerapan DOM Event pada Form**
+
+Buatlah sebuah file HTML dengan nama login.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="login.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="sign-in">
+        <h1>Sign In</h1>
+
+        <div id="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" />
+        </div>
+
+        <div id="field">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password" />
+        </div>
+
+        <button type="submit">login</button>
+      </form>
+    </div>
+  </body>
+</html>
+```
+
+Buatlah file javascript dengan nama login.js
+
+```js
+let loginForm = document.getElementById("sign-in");
+let inputUsername = document.getElementById("username");
+let inputPassword = document.getElementById("password");
+
+let user = {
+  username: "Salim",
+  password: "admin",
+};
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  //   console.log(inputUsername.value);
+  //   console.log(inputPassword.value);
+
+  let userLogin = {
+    username: inputUsername.value,
+    password: inputPassword.value,
+  };
+
+  console.log(userLogin);
+
+  if (
+    userLogin.username == user.username &&
+    userLogin.password == user.password
+  ) {
+    console.log("Selamat anda berhasil login");
+  } else {
+    console.log("Username dan Password anda salah");
+  }
+
+  loginForm.reset();
+});
 ```
