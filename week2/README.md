@@ -1,4 +1,4 @@
-# Day 2 | Scope & Function
+# Day 1 | Scope & Function
 
 ## **Scope**
 
@@ -134,6 +134,116 @@ const fullName = (firstName, lastName) => {
 
 console.log(fullName(Salim, Sulaiman)); //output Salim Sulaiman
 ```
+
+# Day 2 | Data Type Built in Prototype & Method
+
+Javascript merupakan sebuah bahasa yang dinamis.
+
+```js
+let foo = 42;
+foo = "bar";
+foo = true;
+```
+
+## **Tipe Data**
+
+Javascript memiliki beberapa tipe data.
+
+- Primitive
+  - Boolean
+  - Null
+  - Undefined
+  - Number
+  - Bright
+  - String
+  - Symbol
+- Object
+
+Kita juga dapat mengecek tipe data dari sebuah variabel, yaitu dengan menggunakan typeof
+
+```js
+let hewan = "kancil";
+typeof hewan;
+```
+
+## **String**
+
+Objek String ditandai dengan single quotes ataupun double quotes.
+Kita juga dapat mengetahui panjang dari sebuah string yaitu dengan fitur lenght
+
+```js
+let greeting = "Hello";
+console.log(greeting.length); // output 5
+```
+
+## **String Method**
+
+- **toUpperCase**
+  Mengubah string menjadi uppercase
+  ```js
+  let hewan = "kancil";
+  console.log(hewan.toUpperCase()); // KANCIL
+  ```
+- **toLowerCase**
+  Mengubah string menjadi lowercase
+  ```js
+  let hewan = "KANCIL";
+  console.log(hewan.toLowerCase()); // kancil
+  ```
+- **charAt**
+  Mengambil bagian String dengan menggunakan index
+  ```js
+  let hewan = "kancil";
+  console.log(hewan.charAt(1)); // output a
+  ```
+- **includes**
+  Digunakan untuk melakukan pencarian pada string
+  ```js
+  let hewan = "kancil";
+  console.log(hewan.includes("n")); // output true
+  ```
+- **split**
+  Membagi sebuah String, ketika dipisah akan menjadi data array
+  ```js
+  let kalimat = "Dengan menggunakan split(), kita dapat memisahkan string";
+  console.log(kalimat.split(" "));
+  ```
+
+## **Number**
+
+Number merupakan salah satu tipe data primitif
+
+- **isNaN**
+  Untuk mengecek apakah tipe data bukan merupakan number
+  ```js
+  isNaN("Hello"); //true
+  isNaN(123); // false
+  ```
+- **toString**
+  Mengubah sebuah tipe data dari number ke string
+  ```js
+  let angka = 20;
+  console.log(angka.toString()); // '20'
+  ```
+- **toFixed**
+  Menentukan jumlah angka di belakang koma
+  ```js
+  let dec = 3.1431221;
+  console.log(dec.toFixed(2)); // '3.14'
+  ```
+
+## **Math**
+
+Math merupakan built in object atau merupakan objek yang sudah disediakan oleh javascript
+
+- Math.E //Bilangan Euler
+- Math.LN2 //Log 2
+- Math.LN10 //Log 10
+- Math.LOG2E //Log E di basis 2
+- Math.LOGE10 //Log E di basis 10
+- Math.PI //pi
+- Math.SQRT1_2 //Akar kuadrat dari 0.5
+- Math.SQRT2 //Akar kuadrat dari 2
 
 # Day 3 | DOM (Mengakses Halaman HTML)
 
