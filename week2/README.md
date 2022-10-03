@@ -665,3 +665,5 @@ loginForm.addEventListener("submit", (event) => {
   loginForm.reset();
 });
 ```
+
+Video presentasi : [https://drive.google.com/file/d/1m3Gxie6EZz0qann33QnRSIaDCut7k15C/view?usp=sharing](https://drive.google.com/file/d/1m3Gxie6EZz0qann33QnRSIaDCut7k15C/view?usp=sharing)
