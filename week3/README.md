@@ -109,3 +109,88 @@ const greeting = {
 
 console.log(greeting.afterPay()); // output : Terimakasih sudah membeli produk kami
 ```
+
+## **Nested Object**
+
+```js
+let buku = {
+  judul: "tips jago javascript",
+  tahun: 2022,
+  penulis: {
+    penulis1: {
+      nama: "Reyhan",
+      umur: 28,
+      kota: "Jakarta",
+    },
+    penulis2: {
+      nama: "Aby",
+      umur: 25,
+      kota: "Bandung",
+    },
+  },
+};
+
+console.log(buku);
+console.log(buku.penulis.penulis1.nama); // output Reyhan
+```
+
+## **Looping Object**
+
+```js
+// for in
+let siswa = {
+  nama: "Salim Sulaiman",
+  umur: 20,
+  asal: "Tegal",
+};
+
+console.log(siswa);
+
+for (let key in siswa) {
+  console.log(siswa[key]);
+}
+```
+
+Output  
+ ![forin!](for-in.png)
+
+## **Array of Object**
+
+Kita dapat menggunakan array of object untuk data yang lebih dari satu.
+
+```js
+let users = [
+  {
+    nama: "Reyhan",
+    umur: 17,
+    alamat: "Tegal",
+  },
+  {
+    nama: "Wahyu",
+    umur: 20,
+    alamat: "Tegal",
+  },
+  {
+    nama: "Aby",
+    umur: 21,
+    alamat: "Tegal",
+  },
+];
+
+// menampilkan seluruh user
+console.log(users);
+
+// mengambil data dengan index 1
+console.log(users[1]);
+
+// melakukan looping
+// parameter el dalam map berfungsi menggantikan nama dari object
+let data = users.map((el) => {
+  //   console.log(el.nama);
+  // menambahkan property status disetiap object
+  el.status = "aktif";
+  return el;
+});
+
+console.log(data);
+```
