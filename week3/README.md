@@ -194,3 +194,96 @@ let data = users.map((el) => {
 
 console.log(data);
 ```
+
+# Day 3 | Module & Recursive
+
+## **Module**
+
+### **Pengertian**
+
+Modules adalah reusable code yang dapat di export dari suatu file javascript dan di import ke file javascript yang lain.  
+Reusable code disini merupakan data yang dapat digunakan berkali kali
+
+### **Alasan membuat program menjadi module**
+
+Alasan membuat program menjadi module adalah sebagai berikut :
+
+- Mudah untuk menemukan dan mengatasi debug pada sebuah program.
+- Code lebih mudah dibaca dan mudah dimengerti karena program diubah menjadi componet-component yang kecil.
+- Reusable code, cukup membuat logic method pada suatu file lalu dapat digunakan pada pada file lainnya.
+
+### **Membuat Module**
+
+- Pada file index.html kita harus menambahkan script attribute type untuk modules.
+
+  ```html
+  <script src="indonesia.js" type="module"></script>
+  ```
+
+  File indonesia.js merupakan file javascript utama/main yang dipanggil pada file html.
+
+- Kemudian buatlah file javascript dengan nama jepang.js. Di dalamnya berisi array berisi data motor yang nantinya akan dipanggil pada file Indonesia.js
+
+  ```js
+  let motor = ["Suzuki", "Yamaha", "Honda", "Kawasaki"];
+
+  export { motor };
+  ```
+
+  Seperti yang dilihat pada kode diatas, setelah membuat array motor, selanjutnya kita melakukan export array motor tersebut.
+
+- Kemudian pada file indonesia.js kita akan mengimport file javascript.js agar datanya dapat kita gunakan pada file main/utama (indonesia.js)
+  ```js
+  import { motor } from "./jepang.js";
+  console.log(motor);
+  console.log(motor[2]);
+  ```
+  Pada code diatas kita melakukan import file jepang.js, kemudian kita mengambil variabel motor yang ada pada file jepang.js tersebut.  
+  ![module!](module.png).
+
+Jadi untuk segala variabel, function, dll kita letakan pada file jepang.js, sedangkan pada file indonesia.js kita hanya tinggal memanggil saja data-data yang ada pada jepang.js. Dengan begini code akan lebih tertata, mudah dibaca, dan juga mudah dimengerti.
+
+## **Recursive**
+
+### **Pengertian**
+
+Recursive merupakan function yang memanggil dirinya sendiri sampai kondisi tertentu. Recursive merupakan salah satu paradigma pemrograman.
+Recursive kebanyakan digunakan untuk case matematika, fisika, kimia, dan yang berhubungan dengan calculation.
+
+```js
+function recursive() {
+  if (condition) {
+    // stop calling itself
+    // ...
+  } else {
+    recursive();
+  }
+}
+```
+
+### **Ciri-ciri Rekursif**
+
+- Fungsi rekursif selalu memiliki kondisi yang menyatakan kapan fungsi tersebut berhenti.
+- Fungsi rekursif selalu memanggil dirinya sendiri sambil mengurangi atau memecahkan data masukan setiap panggilannya.
+
+### **Contoh sederhana kasus rekursif**
+
+Contoh sederhananya saat kita ingin membuat sebuah deret angka
+
+```js
+function deretAngka(n) {
+  if (n == 1) {
+    console.log(n);
+  } else {
+    deretAngka(n - 1);
+    console.log(n);
+  }
+}
+
+deretAngka(3); // output 1 2 3
+```
+
+- Function diatas memiliki sebuah parameter (n)
+- Program akan melakukan perkondisian, jika n == 1 maka tampilkan n.
+- Jika else maka akan memanggil kembali function deretAngka dengan parameter (n-1), kemudian tampilkan.
+- Dari program diatas, function deretAngka akan terpanggil terus menerus hingga memenuhi kondisi, yaitu ketika n==1
