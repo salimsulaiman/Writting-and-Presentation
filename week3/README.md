@@ -287,3 +287,81 @@ deretAngka(3); // output 1 2 3
 - Program akan melakukan perkondisian, jika n == 1 maka tampilkan n.
 - Jika else maka akan memanggil kembali function deretAngka dengan parameter (n-1), kemudian tampilkan.
 - Dari program diatas, function deretAngka akan terpanggil terus menerus hingga memenuhi kondisi, yaitu ketika n==1
+
+# Day 4 | Asynchronus & Promise
+
+## **Asynchronus**
+
+Asyncronus Programming merupakan teknik yang memungkinkan program untuk memulai task yang berjalan lama agar dapat disela oleh task yang membutuhkan waktu sebentar, setelah task selesai, maka akan melanjutkan task yang sebelumnya masih berjalan.
+
+Asynchronus dibutuhkan ketika ada suatu proses yang membutuhkan waktu lama, jadi daripada menunggu proses itu selesai dikerjakan kita dapat mengerjakan task yang lainnya.
+
+## **Proses Asynchronus**
+
+Sebagai contoh :
+
+```js
+console.log("A");
+
+console.log("B");
+
+console.log("C");
+```
+
+Ketika program diatas dijalankan maka akan menghasilkan output  
+![asyncronus!](<asyncronus(1).png>).
+
+Namun apa yang terjadi jika kita menambahkan setTimeout pada salah satu proses.
+
+```js
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 1000);
+
+console.log("C");
+``;
+```
+
+maka yang terjadi adalah "C" akan lebih dahulu diproses sebelum "B".  
+![asyncronus!](<asyncronus(2).png>).
+
+## **Callback Function**
+
+Callback merupakan function yang dijadikan sebagai argumen
+
+```js
+setTimeout(() => {
+  console.log("Contoh Callback");
+}, 2000);
+```
+
+## **Promise**
+
+Promise merepresentasikan dari suatu kejadian, apakah kejadian itu berhasil atau gagal dari proses asynchronus.
+
+Promise memiliki 2 parameter callback, yaitu resolve dan juga reject.
+
+Resolve ketika sebuah promise terpenuhi, sedangkan Reject ketika sebuah promise gagal terpenuhi
+
+```js
+let nonton = (kondisi) => {
+  return new Promise((resolve, reject) => {
+    if (kondisi == "jalan") {
+      resolve("Nonton Terpenuhi");
+    } else {
+      reject("Batal nonton");
+    }
+  });
+};
+
+nonton("jalan")
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+``;
+```
