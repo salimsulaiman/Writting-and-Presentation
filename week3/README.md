@@ -363,5 +363,50 @@ nonton("jalan")
   .catch((err) => {
     console.log(err);
   });
-``;
+```
+
+# Day 5 | Web Storage
+
+## **Pengertian**
+
+Web Storage merupakan sebuah penyimpanan atau ruang yang digunakan untuk menyimpan suatu data pada browser
+
+## **Contoh Data Yang disimpan**
+
+- Preferensi User
+- Setting
+- Score pada Game
+- Darkmode / Lightmode
+- Dll
+
+## **Jenis Penyimpanan**
+
+Web Storage menyediakan dua object untuk menyimpan sebuah data.
+
+- localStorage = Menyimpan data tanpa expiration date.
+- sessionStorage = Menyimpan data untuk one session (data akan hilang ketika browser ditutup)
+
+## **Menyimpan data dengan Local Storage**
+
+Untuk menyimpan sebuah data kita dapat menggunakan setItem("key", "value")
+
+```js
+let theme = "darkMode";
+localStorage.setItem("theme", theme);
+```
+
+## **Mengambil data dari Local Storage**
+
+Untuk mengambil sebuah data kita dapat menggunakan getItem("key")
+
+```js
+console.log(localStorage.getItem("theme"));
+```
+
+## **Menghapus data dari Local Storage**
+
+Untuk menghapus sebuah data pada local storage kita dapat menggunakan fungsi removeItem("key")
+
+```js
+localStorage.removeItem("theme");
 ```
