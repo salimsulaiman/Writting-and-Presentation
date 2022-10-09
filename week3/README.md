@@ -1,3 +1,209 @@
+# Day 1 | Array
+
+## **Pengertian**
+
+Array adalah tipe data list order yang dapat menyimpen berbagai jenis tipe data di dalamnya seperti String, Number, Boolean, dan lainnya.
+
+## **Contoh Array**
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+console.log(arrBuah);
+```
+
+```js
+let arr = ["hello", 1, true];
+
+console.log(arr);
+```
+
+## **Mengakses element array**
+
+Array pada javascript dihitung dari index data ke-0, jadi data pertama adalah index ke-0
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+console.log(arrBuah[1]); // output : semangka
+```
+
+## **Update Array**
+
+Seperti tipe data lainnya, kita juga dapat mengupdate data pada array
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+console.log(arrBuah[1]); // output : semangka
+
+arrBuah[1] = "jambu";
+console.log(arrBuah[1]); // output : jambu
+```
+
+## **Mengetahui Panjang Array**
+
+Untuk mengetahui jumlah panjang data suatu array kita dapat menggunakan property length
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+console.log(arrBuah.length); // output : 4
+```
+
+## **Menambahkan data array paling belakang**
+
+Kita dapat menambahkan data array dengan menggunakan built-in method .push().  
+push() digunakan untuk menambahkan data array di posisi paling belakang.
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+arrBuah.push("duku");
+console.log(arrBuah);
+```
+
+## **Menambahkan data array paling depan**
+
+Kita dapat menambahkan data array di posisi paling depan dengan menggunakan unshift().
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+arrBuah.unshift("anggur");
+console.log(arrBuah);
+```
+
+## **Menghapus data array paling belakang**
+
+Untuk menghapus data array di posisi paling belakang kita dapat menggunakan method pop()
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+arrBuah.pop();
+console.log(arrBuah);
+```
+
+## **Menghapus data array paling depan**
+
+Untuk menghapus data array di posisi paling depan kita dapat menggunakan method shift()
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+arrBuah.shift();
+console.log(arrBuah);
+```
+
+## **Menghapus, Mengubah, dan Menambahkan data dari tengah**
+
+Dengan menggunakan method splice() kita dapat menghapus, mengubah, maupun menambahkan data dari manapun, terutama pada data yang memiliki posisi di tengah
+
+- Menghapus data array
+
+  ```js
+  let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+  arrBuah.splice(2, 1); // splice(startIndex, deleteCount)
+  console.log(arrBuah);
+  ```
+
+  - Mengubah data array
+
+  ```js
+  let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+  arrBuah.splice(3, 1, "dukuh"); // splice(startIndex, deleteCount, item)
+  // mengubah 1 element pada index 3 menjadi "dukuh"
+  console.log(arrBuah);
+  ```
+
+  - Menambah data array
+
+  ```js
+  let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+  arrBuah.splice(3, 0, "dukuh", "durian"); // splice(startIndex, deleteCount, item1, item2)
+  // menambahkan 2 data yang dimulai dari index ke 3
+  console.log(arrBuah);
+  ```
+
+## **Mengambil dengan cara mengcopy datanya**
+
+Untuk mengambil dengan cara mengcopy data array dapat menggunakan method slice()
+
+```js
+let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+console.log(arrBuah.slice(1, 4)); // value kedua merupakan batas datanya
+```
+
+## **Looping**
+
+Terdapat berbagai cara untuk melakukan looping pada array.
+
+- for
+
+  ```js
+  let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+
+  for (let i = 0; i < arrBuah.length; i++) {
+    console.log(arrBuah[i]);
+  }
+  ```
+
+- for of
+
+  ```js
+  let arrBuah = ["jeruk", "semangka", "pepaya", "rambutan"];
+  for (let buah of arrBuah) {
+    console.log(buah);
+  }
+  ```
+
+- forEach
+  ```js
+  arrBuah.forEach((item, index) => {
+    //menampilkan data denga index ganjil
+    if (index % 2 == 1) {
+      console.log(index, item);
+    }
+  });
+  ```
+- map
+  ```js
+  arrBuah.forEach((item, index) => {
+    //menampilkan data denga index ganjil
+    if (index % 2 == 1) {
+      console.log(index, item);
+    }
+  });
+  ```
+
+## **Array Multidimension**
+
+Multidimensional Array dapat diartikan sebagai array of array, atau ada array di dalam array
+
+```js
+let shop = [
+  ["kaos", 20],
+  ["jaket", 12],
+  ["topi", 35],
+  ["celana", 10],
+];
+
+console.log(shop);
+```
+
+## **Mengakses index Array Multidimension**
+
+```js
+let shop = [
+  ["kaos", 20],
+  ["jaket", 12],
+  ["topi", 35],
+  ["celana", 10],
+];
+
+console.log(shop[2][0]); // output : topi
+```
+
 # Day 2 | Object
 
 ## **Pengertian Object**
