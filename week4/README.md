@@ -57,6 +57,7 @@ Sebagai contoh saat ingin mengambil data dari API https://digimon-api.vercel.app
     });
   ```
 - Menggunakan async await
+
   ```js
   let getDataDigimon = async () => {
     try {
@@ -67,6 +68,8 @@ Sebagai contoh saat ingin mengambil data dari API https://digimon-api.vercel.app
       console.log(error);
     }
   };
+
+  getDataDigimon();
   ```
 
 Dari kedua cara diatas kita akan mendapatkan sebuah data json yang disediakan oleh server melalui API. dari data yang dihasilkan dapat berupa object ataupun array of object
