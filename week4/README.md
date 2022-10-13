@@ -101,7 +101,7 @@ Untuk membuat website menjadi responsive kita perlu menambahkan meta viewport pa
 
 max width digunakan untuk menghindari terjadi overflow saat tampilan website diperkecil, cara menggunakannya adalah dengan menambahkan attribute max-width = 100% pada image
 
-#### **Media Query**
+### **Media Query**
 
 media query merupakan salah satu cara membuat sebuah website menjadi responsive.  
 umumnya terdapat 2 jenis media query, yaitu min-width dan max-width.
