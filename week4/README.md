@@ -75,6 +75,64 @@ Sebagai contoh saat ingin mengambil data dari API https://digimon-api.vercel.app
 Dari kedua cara diatas kita akan mendapatkan sebuah data json yang disediakan oleh server melalui API. dari data yang dihasilkan dapat berupa object ataupun array of object
 ![json!](json.png)
 
+# Day 2 | Github Lanjutan
+
+## **Melakukan Collab**
+
+Untuk melakukan collab kita dapat menuju setting pada repository, kemudian pilih access collab, kemudian invite user yang ingin melakukan collab
+![collab!](collab.png)
+
+## **Melakukan git clone**
+
+Setelah di invite menjadi user yang berpartisipasi untuk collab selanjutnya user perlu melakukan clone dengan url repository dari project.  
+**Git clone** digunakan untuk mengcopy atau menyalin file dari suatu repository github ke dalam komputer.
+
+```
+git clone https://github.com/user/test-collab.git
+```
+
+## **Membuat branch baru**
+
+Untuk membuat branch baru kita dapat menggunakan perintah.
+
+```
+git checkout -b nama_branch
+```
+
+## **Berpindah branch**
+
+Untuk berpindah antar branch kita dapat menggunakan perintah.
+
+```
+git checkout nama_branch
+```
+
+## **Melakukan push pada branch lain**
+
+Untuk melakukan push kita harus masuk ke dalam branch yang telah kita buat, setelah itu lakukan push seperti biasa. Sebagai contoh saat ingin push pada branch salim-register.
+
+```
+git checkout nama_branch
+git add .
+git commit -m "pesan commit"
+git push -u origin nama_branch
+```
+
+## **Merge Request**
+
+Setelah melakukan push pada branch masing masing kita akan diminta untuk merge ke branch default, klik merge pull request untuk menggabungkan branch
+![merge-pull-request!](merge-pull-request.png)
+
+## **Git Pull**
+
+Saat melakukan collab tentunya akan selalu terjadi perbedaan file di masing masing branch. tentunya kita membutuhkan file yang up to date pada branch default, untuk melakukannya kita memerlukan yang namanya git pull
+
+```
+git pull origin nama_branch_default
+```
+
+perintah diatas digunakan untuk mengambil file up to date yang terdapat pada branch default atau dalam kasus ini merupakan branch untuk tahap development
+
 # Day 3 | Responsive Web Design & Bootstrap
 
 ## **Responsive Web Design**
