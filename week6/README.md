@@ -154,3 +154,33 @@
 
   export default Login;
   ```
+
+# Day 4 | Life Cycle
+
+- Lifecycle merupakan aktivitas yang dilakukan oleh React ketika aplikasi berjalan
+- Terdapat 3 siklus life cycle
+  - mount : Ketika sebuah komponen dibuat atau pertama kali di render ke DOM
+  - update : Ketika sebuah komponen akan dirender ulang, biasanya saat terjadi sebuah perubahan
+  - unmount : Ketika sebuah komponen dihapus.
+- Pada Function Component, useEffect digunakan untuk menambahkan kemampuan untuk melakukan side effect dari sebuah function component, hook ini memiliki fungsi yang sama dengan componentDidMount, componentDidUpdate, componentWillUnmount
+
+  ```js
+  import React, { useState, useEffect } from "react";
+
+  function Example() {
+    const [count, setCount] = useState(0);
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+      // Update the document title using the browser API
+      document.title = `You clicked ${count} times`;
+    });
+
+    return (
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>Click me</button>
+      </div>
+    );
+  }
+  ```
