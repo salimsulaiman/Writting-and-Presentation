@@ -122,3 +122,35 @@
   import "./style.css";
   ```
   Perintah import tersebut diketikan pada component yang ingin kita berikan css
+
+# Day 3 | Event
+
+- Terdapat berbagai event pada React
+  - onClick
+  - onChange
+  - onSubmit
+  - dll
+- Events pada React biasanya ditulis dalam bentuk camelCase, bukan lowercase
+
+  ```html
+  <button onClick="{activateLasers}">Aktivasi Laser</button>
+  ```
+
+- Contoh pemanggilan fungsi dengan onClick
+
+  ```js
+  const Login = () => {
+    const greeting = () => {
+      alert("Hello World");
+    };
+    return (
+      <div className="text-center">
+        <button className="btn btn-primary" onClick={greeting}>
+          Button
+        </button>
+      </div>
+    );
+  };
+
+  export default Login;
+  ```
