@@ -184,3 +184,94 @@
     );
   }
   ```
+
+- React memiliki berbagai macam hook, hook merupakan fungsi spesial yang memungkinkan kita dapat terhubung dengan fitur-fitur pada React.
+
+# Day 5 | Form
+
+- Sama seperti javascript vanilla, pada React form juga menggunakan event onSubmit
+
+  ```html
+  <form action="" onSubmit="{handleSubmit}">....</form>
+  ```
+
+- Pada state terdapat setter dan getter
+  ```js
+  const [name, setName] = useState(0);
+  ```
+  **name** disebut sebagai getter, dan **setName** disebut sebagai setter
+- Pada input, kita memberikan property value awal dengan state yang berisi string kosong
+
+  ```js
+  // state
+  const [name, setName] = useState("");
+
+  <input type="text" value={name} />;
+  ```
+
+- Untuk melacak perubahan pada form input yang kita ketik, kita dapat menggunakan `onChange={(e) => setName(e.target.value)}`
+
+  ```js
+  const [name, setName] = useState("");
+
+  <input type="text" value={name} onChange={(e) => setName(e.target.value)} />;
+  ```
+
+- Contoh penggunaan form untuk push data ke API
+
+  ```js
+  import { useState } from "react";
+  import axios from "axios";
+  const Form = () => {
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [program, setProgram] = useState("");
+    const [data, setData] = useState({});
+
+    const handleSubmit = (e) => {
+      axios
+        .post("https://635b3d50aa7c3f113db88e01.mockapi.io/users", {
+          name,
+          address,
+          program,
+        })
+        .then(() => {
+          setData({ name, address, program });
+          setName("");
+          setAddress("");
+          setProgram("");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      e.preventDefault();
+      // alert(`Nama : ${name}, Address : ${address}`);
+    };
+
+    return (
+      <>
+        <form action="" onSubmit={handleSubmit}>
+          <label htmlFor="">Name</label>
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <label htmlFor="">Address</label>
+          <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+          <label htmlFor="">Program</label>
+          <select value={program} onChange={(e) => setProgram(e.target.value)}>
+            <option value="">Select Program</option>
+            <option value="KM">KM</option>
+            <option value="SIC">SIC</option>
+            <option value="Amman">Amman</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+        <h2>Nama : {data.name}</h2>
+        <h3>Address : {data.address}</h3>
+        <h3>Program : {data.program}</h3>
+      </>
+    );
+  };
+
+  export default Form;
+  ```
+
+  contoh diatas kita akan melakukan push data dari form ke alamat API yang telah kita buat pada mockAPI
