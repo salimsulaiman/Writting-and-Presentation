@@ -142,3 +142,88 @@
 
   export default AboutPage;
   ```
+
+# Day 3 | Redux
+
+- Redux merupakan sebuah library react untuk mengelola state management
+- Pada redux, state akan disimpan pada tempat tertentu sehingga akan lebih mudah dalam memanagenya.
+- Terdapat 3 component utama dalam Redux
+  - Store : Berfungsi untuk menampung sebuah state yang nantinya akan digunakan.
+  - Reducer : Berfungsi untuk mengelola sebuah state yang ada pada store.
+  - Action : Berisi function yang mereturn sebuah object yang nantinya dapat dipanggill.
+- Untuk menginstal Redux kita dapat menggunakan perintah `npm install redux react-redux`
+- Melakukan setup redux
+
+  - Membuat store
+
+    ```js
+    import { createStore } from "redux";
+    import keranjangReducer from "../reducer/keranjangReducer";
+
+    const store = createStore(keranjangReducer);
+
+    export default store;
+    ```
+
+  - Setup store pada main.jsx
+
+    ```js
+    import React from "react";
+    import ReactDOM from "react-dom/client";
+    import App from "./App";
+    import "./index.css";
+    import { Provider } from "react-redux";
+    import store from "./redux/store";
+
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+    ```
+
+  - Membuat Reducer
+
+    ```js
+    import { INCREMENT_KERANJANG, DECREMENT_KERANJANG } from "../action/keranjangAction";
+
+    const initialState = {
+      totalKeranjang: 0,
+    };
+
+    function keranjangReducer(state = initialState, action) {
+      switch (action.type) {
+        case INCREMENT_KERANJANG:
+          return {
+            totalKeranjang: state.totalKeranjang + 1,
+          };
+        case DECREMENT_KERANJANG:
+          return {
+            totalKeranjang: state.totalKeranjang - 1,
+          };
+        default:
+          return state;
+          break;
+      }
+    }
+
+    export default keranjangReducer;
+    ```
+
+  - Membuat action
+
+    ```js
+    export const INCREMENT_KERANJANG = "INCREMENT_KERANJANG";
+    export const DECREMENT_KERANJANG = "DECREMENTa_KERANJANG";
+
+    export function incrementKeranjang() {
+      return {
+        type: INCREMENT_KERANJANG,
+      };
+    }
+    export function decrementKeranjang() {
+      return {
+        type: DECREMENT_KERANJANG,
+      };
+    }
+    ```
