@@ -1,4 +1,4 @@
-# Day 1 | Proptypes
+# Proptypes
 
 - Proptypes merupakan sebuah library yang dapat membantu kita dalam memeriksa data props yang kita kirim agar sesuai ekspetasi
 - Untuk menginstal PropTypes kita dapat menggunakan perintah `npm install prop-types`
@@ -62,7 +62,7 @@
   export default StudentInfo;
   ```
 
-# Day 2 | React Router
+# React Router
 
 - React Router merupakan library dengan fitur client lengkap untuk React.
 - Pada intinya React Router dapat diartikan sebagai jalur halaman yang dituju ketika sebuah element di click sesuai dengan URL yang diterapkan
@@ -143,7 +143,7 @@
   export default AboutPage;
   ```
 
-# Day 3 | Redux
+# Redux
 
 - Redux merupakan sebuah library react untuk mengelola state management
 - Pada redux, state akan disimpan pada tempat tertentu sehingga akan lebih mudah dalam memanagenya.
@@ -227,3 +227,26 @@
       };
     }
     ```
+
+- React memiliki sebuah fitur bernama **Thunk**
+- Untuk menginstal thunk kita dapat menggunakan perintah `npm install redux-thunk`
+- Thunk digunakan untuk menghandle proses yang bersifat asynchronus
+- Pada Thunk proses fetch data diletakan pada action
+- Pada bagian store kita harus melakukan import applyMiddleware
+  `import { applyMiddleware } from "redux";`
+- Untuk memanggil Thunk kita dapat menggunakan perintah berikut
+
+  ```js
+  import { createStore, combineReducers, applyMiddleware } from "redux";
+  import todoReducer from "../reducer/todoReducer";
+  import Thunk from "redux-thunk";
+
+  const allReducer = combineReducers({
+    // diisi dengan reducer
+    todo: todoReducer,
+  });
+
+  const store = createStore(allReducer, applyMiddleware(Thunk));
+
+  export default store;
+  ```
