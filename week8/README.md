@@ -73,7 +73,7 @@
   export default App;
   ```
 
-  # React-Contect useReducer
+  # Context useReducer
 
   - Sama seperti Redux, react memiliki state management context useReducer
   - Penggunaan useReducer juga hampir sama seperti Redux
