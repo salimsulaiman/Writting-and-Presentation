@@ -73,55 +73,55 @@
   export default App;
   ```
 
-  # Context useReducer
+# Context useReducer
 
-  - Sama seperti Redux, react memiliki state management context useReducer
-  - Penggunaan useReducer juga hampir sama seperti Redux
-  - Untuk membuat reducer kita memerlukan initialstate dan juga function reducer
+- Sama seperti Redux, react memiliki state management context useReducer
+- Penggunaan useReducer juga hampir sama seperti Redux
+- Untuk membuat reducer kita memerlukan initialstate dan juga function reducer
 
-    ```js
-    // TodoProvider.jsx
-    import React, { createContext, useReducer } from "react";
-    export const TodoContext = createContext();
-    const initialState = {
-      todos: ["belajar react", "belajar redux", "belajar context"],
-    };
+  ```js
+  // TodoProvider.jsx
+  import React, { createContext, useReducer } from "react";
+  export const TodoContext = createContext();
+  const initialState = {
+    todos: ["belajar react", "belajar redux", "belajar context"],
+  };
 
-    function reducer(state, action) {
-      switch (action.type) {
-        default:
-          return state;
-      }
+  function reducer(state, action) {
+    switch (action.type) {
+      default:
+        return state;
     }
-    ```
+  }
+  ```
 
-  - Untuk menggunakan useReducer kita menggunakan
-    `const [state, dispatch] = useReducer(reducer, initialState);`
-    Sehingga code keseluruhan menjadi
+- Untuk menggunakan useReducer kita menggunakan
+  `const [state, dispatch] = useReducer(reducer, initialState);`
+  Sehingga code keseluruhan menjadi
 
-    ```js
-    import React, { createContext, useReducer } from "react";
+  ```js
+  import React, { createContext, useReducer } from "react";
 
-    export const TodoContext = createContext();
+  export const TodoContext = createContext();
 
-    const initialState = {
-      todos: ["belajar react", "belajar redux", "belajar context"],
-    };
+  const initialState = {
+    todos: ["belajar react", "belajar redux", "belajar context"],
+  };
 
-    function reducer(state, action) {
-      switch (action.type) {
-        default:
-          return state;
-      }
+  function reducer(state, action) {
+    switch (action.type) {
+      default:
+        return state;
     }
-    function TodoProvider({ children }) {
-      const [state, dispatch] = useReducer(reducer, initialState);
+  }
+  function TodoProvider({ children }) {
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-      return <TodoContext.Provider value={{ state, deleteTodo }}>{children}</TodoContext.Provider>;
-    }
+    return <TodoContext.Provider value={{ state, deleteTodo }}>{children}</TodoContext.Provider>;
+  }
 
-    export default TodoProvider;
-    ```
+  export default TodoProvider;
+  ```
 
 - Untuk memanggil state pada reducer tersebut kita cukup menggunakan useContext pada komponen yang memerlukan data dari reducer
 
