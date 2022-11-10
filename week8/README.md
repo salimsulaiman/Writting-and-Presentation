@@ -72,3 +72,84 @@
 
   export default App;
   ```
+
+  # React-Contect useReducer
+
+  - Sama seperti Redux, react memiliki state management context useReducer
+  - Penggunaan useReducer juga hampir sama seperti Redux
+  - Untuk membuat reducer kita memerlukan initialstate dan juga function reducer
+
+    ```js
+    // TodoProvider.jsx
+    import React, { createContext, useReducer } from "react";
+    export const TodoContext = createContext();
+    const initialState = {
+      todos: ["belajar react", "belajar redux", "belajar context"],
+    };
+
+    function reducer(state, action) {
+      switch (action.type) {
+        default:
+          return state;
+      }
+    }
+    ```
+
+  - Untuk menggunakan useReducer kita menggunakan
+    `const [state, dispatch] = useReducer(reducer, initialState);`
+    Sehingga code keseluruhan menjadi
+
+    ```js
+    import React, { createContext, useReducer } from "react";
+
+    export const TodoContext = createContext();
+
+    const initialState = {
+      todos: ["belajar react", "belajar redux", "belajar context"],
+    };
+
+    function reducer(state, action) {
+      switch (action.type) {
+        default:
+          return state;
+      }
+    }
+    function TodoProvider({ children }) {
+      const [state, dispatch] = useReducer(reducer, initialState);
+
+      return <TodoContext.Provider value={{ state, deleteTodo }}>{children}</TodoContext.Provider>;
+    }
+
+    export default TodoProvider;
+    ```
+
+- Untuk memanggil state pada reducer tersebut kita cukup menggunakan useContext pada komponen yang memerlukan data dari reducer
+
+  ```js
+  import React, { useContext } from "react";
+  import { TodoContext } from "../TodoProvider";
+
+  function TodoList() {
+    const { state, deleteTodo } = useContext(TodoContext);
+    return (
+      <div>
+        <h1>Todo</h1>
+        <form action="">
+          <input type="text" name="" id="" />
+          <button>add</button>
+        </form>
+        <ul>
+          {state.todos.map((item, index) => {
+            return (
+              <li key={index}>
+                <span>{item}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+
+  export default TodoList;
+  ```
