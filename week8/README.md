@@ -153,3 +153,51 @@
 
   export default TodoList;
   ```
+
+# React Testing
+
+- Testing adalah memeriksa atau menguji suatu code apakah berjalan sesuai dengan expect result atau hasil yang diharapkan.
+- Terdapat 3 automation testing
+
+  - Unit testing
+  - Integration testing
+  - End to End Testing
+
+- Unit Test melakukan pengujian pada bagian yang paling kecil, sebagai contoh adalah function
+- Untuk menginstal jest dapat menggunakann perintah `npm install -D jest`
+- Untuk melakukan testing menggunakan jest
+
+  ```js
+  // Soal | buat fungsi penju
+  function sum(x, y) {
+    return x + y;
+  }
+  module.exports = sum;
+  ```
+
+  ```js
+  const sum = require("./ app");
+
+  test("menjumlahkan angka pada sum()", () => {
+    expect(sum(0, 0)).toBe(0);
+    expect(sum(0, 1)).toBe(1);
+    expect(sum(1, 1)).toBe(2);
+    expect(sum(2, 2)).toBe(4);
+  });
+  ```
+
+- React memiliki fitur untuk melakukan testing bernama RTL (React Testing Library)
+- Untuk melakukan testing menggunakan RTL
+
+  ```js
+  import { render, screen } from "@testing-library/react";
+  import App from "./App";
+
+  test("renders learn react link", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/learn react/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+  ```
+
+- Untuk menjalankan perintah testing dapat menggunakan `npm run test`
